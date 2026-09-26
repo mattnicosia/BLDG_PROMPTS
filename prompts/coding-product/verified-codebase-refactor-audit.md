@@ -103,5 +103,22 @@ Then reply in chat with:
 
 The audit is finished when every slice has been read in full, every P0 and P1 finding has been checked against source, and the tracker is written. If a subagent has gaps, send it back or cover the gap before writing the file. Stop only when something blocks the work and cannot be settled from the code or project guidance.
 
+## Inputs
+- **cwd / repo**: the codebase to audit (current working directory unless the user names another path).
+- **tracker path** (optional): defaults to `AUDIT.md` at the repository root. Override only when the user names a different tracker file.
+- **scope overrides** (optional): include or exclude paths beyond the default first-party source scope. Vendored, generated, and build output stay excluded unless the user explicitly widens scope.
+
+## Expected result
+1. **Tracker file** written or updated at the tracker path, using the `# Code Audit` P0-P3 checklist format in the Prompt (or matching an existing tracker format). Every item cites path:line evidence, cost today, why refactor, and a named fix technique.
+2. **Chat reply** with:
+   - Finding count at each priority.
+   - Each P0 item in one line.
+   - The three changes that would delete the most code, with rough line counts.
+   - Anything dropped during verification, with one line on why.
+
 ## Notes
 This prompt requires proof that a refactor removes a real problem. It does not approve refactors for style alone.
+
+Source: original BLDG (Matt Nicosia). Evidence: GitHub commit 052b9f7, message "Create verified-codebase-refactor-audit.md", dated 2026-09-25. https://github.com/mattnicosia/BLDG_PROMPTS/commit/052b9f789858f6836d46737023b7b0d6eb3bb775
+
+Score: 100/100 (Prompt Master ship pass 2026-09-25).
