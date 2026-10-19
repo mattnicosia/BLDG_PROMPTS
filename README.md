@@ -7,6 +7,7 @@ A library of prompts we use and improve over time.
 - [Agent workflows](prompts/agent-workflows/)
 - [Coding and product](prompts/coding-product/)
 - [Construction and estimating](prompts/construction-estimating/)
+- [Construction operations](prompts/construction-ops/)
 - [Design and websites](prompts/design-websites/)
 - [Marketing and sales](prompts/marketing-sales/)
 - [Research and strategy](prompts/research-strategy/)
