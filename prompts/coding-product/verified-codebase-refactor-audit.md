@@ -110,11 +110,7 @@ The audit is finished when every slice has been read in full, every P0 and P1 fi
 
 ## Expected result
 1. **Tracker file** written or updated at the tracker path, using the `# Code Audit` P0-P3 checklist format in the Prompt (or matching an existing tracker format). Every item cites path:line evidence, cost today, why refactor, and a named fix technique.
-2. **Chat reply** with:
-   - Finding count at each priority.
-   - Each P0 item in one line.
-   - The three changes that would delete the most code, with rough line counts.
-   - Anything dropped during verification, with one line on why.
+2. **Chat reply** with the four items listed under "Then reply in chat with" above.
 
 ## Notes
 This prompt requires proof that a refactor removes a real problem. It does not approve refactors for style alone.
